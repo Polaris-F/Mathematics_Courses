@@ -1,15 +1,7 @@
----
-title: 'Measure and Probability Theory'
-date: 2018-09-25
-permalink: /posts/2018/09/measure-theory/
-tags:
-  - Mathematics
----
-
 - 课程名称: 测度与概率论
 - 教材: 《测度论讲义》(第二版) 严加安著
 
-<!--![](measure-theory.jpg)-->
+![](figures/measure-theory.jpg)
 
 # 第一章 集类与测度
 ## 1.1 集合运算与集类
@@ -31,15 +23,28 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   - 若$(A_n)$两两不相交(即$A_m \cap A_n = \emptyset, \forall m \neq n$), 则常用$\sum_n A_n$表示$\cup_n A_n$
   - 若$\sum_n A_n=\Omega$, 则称$(A_n)$为$\Omega$的一个**划分**
   - 对任一集列$(A_n)$, 令$B_1=A_1, B_n = A_nA_{n-1}^c \cdots A_1^c~ (n\geq2)$, 可以证明$(B_n)$两两不相交, 且$\cup_n B_n = \cup_n A_n$ (*此处暂省去证明*)
+
+- 令 $C_{\cap f} = \{ A | A = \cap_{i=1}^n A_i, A_i \in C, ~i=1, 2, ..., n,~ n \geq 1 \}$, 则
+  - $C_{\cap f}$对有限交封闭
+  - $C_{\cap f}$是包含$C$且对有限交封闭的最小集类
+- 类似地, 可以定义: 
+  - $C_{\cup f}$: 用有限并封闭$C$所得的集类
+  - $C_{\Sigma f}$: 用有限不交并封闭$C$所得的集类
+  - $C_{\delta}$: 用可列交封闭$C$所得的集类
+  - $C_{\sigma}$: 用可列并封闭$C$所得的集类
+  - $C_{\Sigma\sigma}$: 用可列不交并封闭$C$所得的集类
+
 - **常用集类**
-  - $\pi$类: 对有限交封闭
-  - 半环
-  - 半代数
-  - 代数(或域): $\Omega \in C, \emptyset \in C$, 对有限交封闭, 对取余集封闭 (由此推知,对有限并和差运算也封闭)
-  - $\sigma$代数: $\Omega \in C, \emptyset \in C$, 对可列交封闭, 对取余集封闭 (由此推知,对可列并和差运算也封闭)
-  - 单调类: 对单调序列极限封闭
-  - $\lambda$类: $\Omega \in C$, 对差运算封闭, 对单调增序列极限封闭
-  - 易证: 
+  - **$\pi$类**: 对有限交封闭
+  - **半环**
+  - **半代数**
+  - **代数**(或**域**): $\Omega \in C, \emptyset \in C$, 对有限交封闭, 对取余集封闭 (由此推知,对有限并和差运算也封闭)
+  - **$\sigma$代数**: $\Omega \in C, \emptyset \in C$, 对可列交封闭, 对取余集封闭 (由此推知,对可列并和差运算也封闭)
+  - **单调类**: 对单调序列极限封闭
+  - **$\lambda$类**: $\Omega \in C$, 对差运算封闭, 对单调增序列极限封闭(由此推知, 对取余集运算也封闭, 故$\emptyset \in C$)
+  - 易证: $\sigma$代数为$\lambda$类, $\lambda$类为单调类
+
+![](figures/1-1.png)
 
 - 评论
   - 上这门课的目的, 是想对概率论有更深的认识. 第一节课下课问了下老师教学计划, 结果发现这门课可以改叫《测度论》了.
@@ -48,10 +53,36 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   - **有限**的概念我们在日常生活中接触很多, 但**可数**的概念就需要引入极限, 从**有限**到**可数**是一个很大的跨度.
 
 ## 1.2 单调类定理
+- 准备
+  - 设$\{ C_i | i \in I \}$为$\Omega$上的**一族集类**, 若对每个集类$C_i$对某种运算封闭, 则$\cap_i C_i$也对这种运算封闭
+  - 令$\sigma(C) = \cap_{g \supset C, g是\sigma代数}~~~g$. 易证: $\sigma(C)$是包含$C$的最小$\sigma$代数
+  - 同理, 可以定义$m(c)$(包含$C$的最小单调类)和$\lambda(C)$(包含$C$的最小$\lambda$类)
+  - 易证: 恒有$m(C) \subset \lambda(C) \subset \sigma(C)$
 
+![](figures/1-2.png)
 
+- 引理
+  - 若$C$同时为代数和单调类, 则$C$为$\sigma$代数
+  - 若$C$同时为$\lambda$类和$\pi$类, 则$C$为$\sigma$代数
 
+<!--待证明-->
+- **单调类定理**: 设$C$为一集类
+  - 若$C$为代数, 则$m(C) = \sigma(C)$
+  - 若$C$为$\pi$类, 则$\lambda(C) = \sigma(C)$
 
+<!--待证明-->
+- **定理**1.2.3: 设$C$为一集类
+  - $m(C) = \sigma(C) \iff A \in C \Rightarrow A^c \in m(C);~ A, B \in C \Rightarrow A \cap B \in m(C)$
+  - $\lambda(C) = \sigma(C) \iff A, B \in C \Rightarrow A \cap B \in \lambda(C) $
+
+<!--待证明-->
+- **定理**1.2.5: 设$C$为一集类, 若它满足下列条件之一, 则有$m(C) = \sigma(C)$:
+  - $A, B, \in C \Rightarrow A \cap B \in C;~ A \in C \Rightarrow A^c \in C_\delta$
+  - $A, B, \in C \Rightarrow A \cup B \in C;~ A \in C \Rightarrow A^c \in C_\sigma$
+
+- 例: 用$F$表示$\Re$中闭集全体, 用$G$表示$\Re$中开集全体, 有
+  - $\sigma(F) = \sigma(G)$ (通常记作$B(\Re)$, $\Re$中的Borel $\sigma$代数)
+  - $m(G) = \sigma(G)$
 
 
 ## 1.3 测度与非负集函数
