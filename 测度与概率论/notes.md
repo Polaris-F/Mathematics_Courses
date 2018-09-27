@@ -1,5 +1,8 @@
 - 课程名称: 测度与概率论
 - 教材: 《测度论讲义》(第二版) 严加安著
+- 简介: 在实变函数中我们在欧氏空间$\Re^d$中定义了Borel $\sigma$代数上的Lebsgue测度, 在测度论中我们将在更一般的抽象空间上定义和研究测度. 这么做是必要的且有意义的, 因为以测度论为基础, 我们可以将概率公理化. 
+<!--要知道, 在Kolmogorov创立概率论公理化体系之前-->
+
 
 ![](figures/measure-theory.jpg)
 
@@ -86,15 +89,43 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
 
 
 ## 1.3 测度与非负集函数
+- 在本节中我们会
+  - 定义**非负集函数**及其性质
+  - 定义**可测空间**, **测度**, **测度空间**, **非负集函数**
+  - 了解到测度本质上是一个非负函数, 且具有单调性, 可减性, 从上连续, 从下连续, 在空集中连续的性质
+
+- 定义
+  - 设$C$为任一包含$\emptyset$集类, 称$\mu: C \rightarrow \overline{\Re}_+$为**非负集函数**如果: (1) $\mu(\emptyset) = 0$ (2) $\mu$满足单调性: $A, B \in C,~ A \subset B \Rightarrow \mu(A) \leq \mu(B)$
+  - **有限可加性**: $A_i \in C ~(i \in [n]),~ \Sigma_{i=1}^n A_i \in C \Rightarrow \mu(\Sigma_{i=1}^n A_i) = \Sigma_{i=1}^n \mu(A_i) $
+  - **$\sigma$可加性**: $A_i \in C ~(i \geq 1),~ \Sigma_{i=1}^\infty A_i \in C \Rightarrow \mu(\Sigma_{i=1}^\infty A_i) = \Sigma_{i=1}^\infty \mu(A_i) $
+  - **半$\sigma$可加性**: $A \in C, A_i \in C ~(i \geq 1), A \subset  \cup_{i=1}^\infty A_i \Rightarrow \mu(A) \leq \Sigma_{i=1}^\infty \mu(A_i) $
+  - **从下连续**: $A_n \in C, A_n \uparrow A, A \in C \Rightarrow \lim\limits_{n \rightarrow \infty} \mu(A_n) = \mu(A)$
+  - **从上连续**: $A_n \in C, A_n \downarrow A, A \in C \Rightarrow \lim\limits_{n \rightarrow \infty} \mu(A_n) = \mu(A)$
+  -  **在空集中连续**: $A_n \in C, A_n \downarrow \emptyset \Rightarrow \lim\limits_{n \rightarrow \infty} \mu(A_n) = \mu(\emptyset) = 0$
+  -  显然: 从上连续 $\Rightarrow$ 在空集中连续
 
 
+- 定义
+  - 我们称$(\Omega, F)$为**可测空间**如果$F$是$\Omega$上的$\sigma$代数
+  - 我们称$\mu: F \rightarrow \overline{\Re}_+ = [0, +\infty]$为$(\Omega, F)$上的**测度**, 如果(1)$\mu(\emptyset)=0$ (2)$\mu$满足**可列可加性**或**$\sigma$可加性**
+  - 设$\mu$为可测空间$(\Omega, F)$上的测度, 则称$(\Omega, F, \mu)$为**测度空间**
+  - 例子: $(\Re, B(\Re), \lambda)$, 其中$B(\Re)$为Borel $\sigma$代数, $\lambda$为*Lebsgue*测度, 
+  - 有限测度($\mu(\Omega) < \infty$), 概率测度($\mu(\Omega)=1$), $\sigma$有限测度
+  - 若$A \in F, \mu(A)=0$, 则称$A$是**$\mu$零测集**
+  - 如果任何$\mu$零测集的子集都属于$F$, 则称$F$关于$\mu$是完备的, 称是$(\Omega, F, \mu)$**完备测度空间**
 
+<!--待证明-->
+- 定理: 设$(\Omega, F, \mu)$为一测度空间, 则$\mu$满足
+  - 单调可减性: $A, B \in F, A \subset B, \mu(B) < \infty \Rightarrow \mu(B\\A) = \mu(B) - \mu(A) $
+  - 从下连续, 从上连续
 
 ## 1.4 外测度与测度的扩张
-
-
-
-
+- 在本节中我们会
+  - 定义**外测度**
+- 定义
+ - 令$A(\Omega)$表示$\Omega$中所有子集(包含$\emptyset$)构成的集类
+ - 设$\mu^*: A(\Omega) \rightarrow \overline{\Re}_+$为$A(\Omega)$上的一非负集函数, 我们称$\mu^*$为$\Omega$上的**外测度**, 如果(1)$A \subset B \subset \Omega \Rightarrow \mu^* (A) \leq \mu^* (B)$ (单调性) (2) $A_n \subset \Omega (n \geq 1) \Rightarrow \mu^* (\cup_{n=1}^\infty A_n) \leq \sum_{n=1}^\infty \mu^*(A_n) $ (次$\sigma$可加性)
+ - 注意次$\sigma$可加性和半$\sigma$可加性区别. 半$\sigma$可加性是针对一般的集类, 而次$\sigma$可加性是定义在$A(\Omega)$上的.
 
 
 
