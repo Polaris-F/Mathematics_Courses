@@ -39,7 +39,7 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
 
 - **常用集类**
   - **$\pi$类**: 对有限交封闭
-  - **半环**
+  - **半环**: $\emptyset \in C$, 对有限交封闭, $A, B \in C \Rightarrow A \backslash B \in C_{\Sigma f}$
   - **半代数**
   - **代数**(或**域**): $\Omega \in C, \emptyset \in C$, 对有限交封闭, 对取余集封闭 (由此推知,对有限并和差运算也封闭)
   - **$\sigma$代数**: $\Omega \in C, \emptyset \in C$, 对可列交封闭, 对取余集封闭 (由此推知,对可列并和差运算也封闭)
@@ -91,11 +91,12 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
 ## 1.3 测度与非负集函数
 - 在本节中我们会
   - 定义**非负集函数**及其性质
-  - 定义**可测空间**, **测度**, **测度空间**, **非负集函数**
-  - 了解到测度本质上是一个非负函数, 且具有单调性, 可减性, 从上连续, 从下连续, 在空集中连续的性质
+  - 定义**可测空间**, **测度**, **测度空间**
+  - 了解到测度本质上是一个定义在$\sigma$代数上的非负函数, 且具有单调性, 可减性, 从上连续, 从下连续<!--, 在空集中连续-->的性质
 
 - 定义
-  - 设$C$为任一包含$\emptyset$集类, 称$\mu: C \rightarrow \overline{\Re}_+$为**非负集函数**如果: (1) $\mu(\emptyset) = 0$ (2) $\mu$满足单调性: $A, B \in C,~ A \subset B \Rightarrow \mu(A) \leq \mu(B)$
+  - 设$C$为任一包含$\emptyset$集类, 称$\mu: C \rightarrow \overline{\Re}_+$为$C$上的**非负集函数**. 
+  - 在下述定义中约定: (1) $\mu(\emptyset) = 0$ (2) $\mu$满足单调性: $A, B \in C,~ A \subset B \Rightarrow \mu(A) \leq \mu(B)$
   - **有限可加性**: $A_i \in C ~(i \in [n]),~ \Sigma_{i=1}^n A_i \in C \Rightarrow \mu(\Sigma_{i=1}^n A_i) = \Sigma_{i=1}^n \mu(A_i) $
   - **$\sigma$可加性**: $A_i \in C ~(i \geq 1),~ \Sigma_{i=1}^\infty A_i \in C \Rightarrow \mu(\Sigma_{i=1}^\infty A_i) = \Sigma_{i=1}^\infty \mu(A_i) $
   - **半$\sigma$可加性**: $A \in C, A_i \in C ~(i \geq 1), A \subset  \cup_{i=1}^\infty A_i \Rightarrow \mu(A) \leq \Sigma_{i=1}^\infty \mu(A_i) $
@@ -116,16 +117,36 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
 
 <!--待证明-->
 - 定理: 设$(\Omega, F, \mu)$为一测度空间, 则$\mu$满足
-  - 单调可减性: $A, B \in F, A \subset B, \mu(B) < \infty \Rightarrow \mu(B\\A) = \mu(B) - \mu(A) $
+  - 单调可减性: $A, B \in F, A \subset B, \mu(B) < \infty \Rightarrow \mu(B \backslash A) = \mu(B) - \mu(A)$
   - 从下连续, 从上连续
+
+- 评论
+  - 非负集函数的定义非常重要, 在后面的章节会反复遇到, 需牢记且理解.
 
 ## 1.4 外测度与测度的扩张
 - 在本节中我们会
+  - 研究如何把一半环$C$上的一个$\sigma$可加非负集函数扩张称为$\sigma$代数$\sigma(C)$上的测度
   - 定义**外测度**
-- 定义
+
+- **定义**
  - 令$A(\Omega)$表示$\Omega$中所有子集(包含$\emptyset$)构成的集类
  - 设$\mu^*: A(\Omega) \rightarrow \overline{\Re}_+$为$A(\Omega)$上的一非负集函数, 我们称$\mu^*$为$\Omega$上的**外测度**, 如果(1)$A \subset B \subset \Omega \Rightarrow \mu^* (A) \leq \mu^* (B)$ (单调性) (2) $A_n \subset \Omega (n \geq 1) \Rightarrow \mu^* (\cup_{n=1}^\infty A_n) \leq \sum_{n=1}^\infty \mu^*(A_n) $ (次$\sigma$可加性)
  - 注意次$\sigma$可加性和半$\sigma$可加性区别. 半$\sigma$可加性是针对一般的集类, 而次$\sigma$可加性是定义在$A(\Omega)$上的.
 
+<!--待证明-->
+- **定理**: 设$\mu^*$为$\Omega$上的一外测度. 令 $$U = \{ A \subset \Omega | \forall D \subset \Omega, \mu^*(D) = \mu^*(A \cap D) + \mu^*(A^c \cap D) \}$$ 则$\mu^*$为$\Omega$上的一$\sigma$代数, 且$\mu^*$限于$U$为一测度. 我们称$U$中的元素为**$\mu^*$可测集**.
 
+<!--待证明-->
+- **命题**: 设$C$为$\Omega$上一集类, 且$\emptyset \in C$. 又设$\mu$为$C$上的一半$\sigma$可加非负集函数, 且$\mu(\emptyset)=0$. 令 $$ \mu^*(A) = \inf \Big\{ \sum_{n=1}^\infty \mu(A_n) | A_n \in C, A \subset \cup_{n=1}^\infty A_n \Big\}, A \subset \Omega $$ 则$\mu^*$为$\Omega$上的外测度, 且$\mu^*$限于$C$与$\mu$一致, 我们称$\mu^*$为由$\mu$**引出的外测度**.
+
+<!--待证明-->
+- **命题**: 设$\mu$为半环$C$上的一非负集函数(约定$\mu(\emptyset)=0$). 则$\mu$是$\sigma$可加的 $\iff$ $\mu$为有限可加且半$\sigma$可加的
+
+<!--待证明-->
+- **引理**: 设$C$为$\Omega$上的一集类, 且$\emptyset \in C$. 又设$\mu$为$C$上的一半$\sigma$可加非负集函数, 且$\mu(\emptyset = 0)$, $\mu^*$为$\mu$引出的外测度. 则 $A$为$\mu^*$可测集 $\iff$ $\forall B \in C$, 有 $ \mu(B) \geq \mu^*(B \cap A) + \mu^*(B \cap A^c) $
+
+- **引理**:
+
+<!--待证明-->
+- **Caratheodory测度扩张定理**: 设$C$为$\Omega$上的一半环, $\mu$为$C$上的一$\sigma$可加非负集函数, 则$\mu$可扩张成$\sigma(C)$上的一测度. 若进一步$\mu$在$C$上为$\sigma$有限,  且$\Omega \in C_\sigma$, 则这一扩张是唯一的, 并且扩张所得的测度在$\sigma(C)$上也是$\sigma$有限的. 
 
