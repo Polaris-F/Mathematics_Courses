@@ -1,11 +1,3 @@
-- 课程名称: 测度与概率论
-- 教材: 《测度论讲义》(第二版) 严加安著
-- 简介: 在实变函数中我们在欧氏空间$\Re^d$中定义了Borel $\sigma$代数上的Lebsgue测度, 在测度论中我们将在更一般的抽象空间上定义和研究测度. 这么做是必要的且有意义的, 因为以测度论为基础, 我们可以将概率公理化. 
-<!--要知道, 在Kolmogorov创立概率论公理化体系之前-->
-
-
-![](figures/measure-theory.jpg)
-
 # 第一章 集类与测度
 ## 1.1 集合运算与集类
 - $\Omega$: 给定的非空集合(全空间)
@@ -46,6 +38,8 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   - **单调类**: 对单调序列极限封闭
   - **$\lambda$类**: $\Omega \in C$, 对差运算封闭, 对单调增序列极限封闭(由此推知, 对取余集运算也封闭, 故$\emptyset \in C$)
   - 易证: $\sigma$代数为$\lambda$类, $\lambda$类为单调类
+
+![](figures/set_class.png)
 
 ![](figures/1-1.png)
 
@@ -110,6 +104,7 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   - 我们称$(\Omega, F)$为**可测空间**如果$F$是$\Omega$上的$\sigma$代数
   - 我们称$\mu: F \rightarrow \overline{\Re}_+ = [0, +\infty]$为$(\Omega, F)$上的**测度**, 如果(1)$\mu(\emptyset)=0$ (2)$\mu$满足**可列可加性**或**$\sigma$可加性**
   - 设$\mu$为可测空间$(\Omega, F)$上的测度, 则称$(\Omega, F, \mu)$为**测度空间**
+  - 若$\mu(\Omega)<\infty$, 则称$\mu$为**有限测度**; 若$\mu(\Omega)=1$, 则称$\mu$为**概率测度**; 若存在$A_n \in F, n \geq 1$, 使得$\cup_n A_n = \Omega$, 且$\mu(A_n) < \infty, \forall n$, 则称$\mu$为**$\sigma$有限测度**
   - 例子: $(\Re, B(\Re), \lambda)$, 其中$B(\Re)$为Borel $\sigma$代数, $\lambda$为*Lebsgue*测度, 
   - 有限测度($\mu(\Omega) < \infty$), 概率测度($\mu(\Omega)=1$), $\sigma$有限测度
   - 若$A \in F, \mu(A)=0$, 则称$A$是**$\mu$零测集**
@@ -140,13 +135,29 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
 - **命题**: 设$C$为$\Omega$上一集类, 且$\emptyset \in C$. 又设$\mu$为$C$上的一半$\sigma$可加非负集函数, 且$\mu(\emptyset)=0$. 令 $$ \mu^*(A) = \inf \Big\{ \sum_{n=1}^\infty \mu(A_n) | A_n \in C, A \subset \cup_{n=1}^\infty A_n \Big\}, A \subset \Omega $$ 则$\mu^*$为$\Omega$上的外测度, 且$\mu^*$限于$C$与$\mu$一致, 我们称$\mu^*$为由$\mu$**引出的外测度**.
 
 <!--待证明-->
-- **命题**: 设$\mu$为半环$C$上的一非负集函数(约定$\mu(\emptyset)=0$). 则$\mu$是$\sigma$可加的 $\iff$ $\mu$为有限可加且半$\sigma$可加的
+- **命题**(1.4.4): 设$\mu$为半环$C$上的一非负集函数(约定$\mu(\emptyset)=0$). 则$\mu$是$\sigma$可加的 $\iff$ $\mu$为有限可加且半$\sigma$可加的
 
 <!--待证明-->
-- **引理**: 设$C$为$\Omega$上的一集类, 且$\emptyset \in C$. 又设$\mu$为$C$上的一半$\sigma$可加非负集函数, 且$\mu(\emptyset = 0)$, $\mu^*$为$\mu$引出的外测度. 则 $A$为$\mu^*$可测集 $\iff$ $\forall B \in C$, 有 $ \mu(B) \geq \mu^*(B \cap A) + \mu^*(B \cap A^c) $
+- **引理**(1.4.5): 设$C$为$\Omega$上的一集类, 且$\emptyset \in C$. 又设$\mu$为$C$上的一半$\sigma$可加非负集函数, 且$\mu(\emptyset = 0)$, $\mu^*$为$\mu$引出的外测度. 则 $A$为$\mu^*$可测集 $\iff$ $\forall B \in C$, 有 $ \mu(B) \geq \mu^*(B \cap A) + \mu^*(B \cap A^c) $
 
-- **引理**:
+- **引理**(1.4.6):
 
 <!--待证明-->
 - **Caratheodory测度扩张定理**: 设$C$为$\Omega$上的一半环, $\mu$为$C$上的一$\sigma$可加非负集函数, 则$\mu$可扩张成$\sigma(C)$上的一测度. 若进一步$\mu$在$C$上为$\sigma$有限,  且$\Omega \in C_\sigma$, 则这一扩张是唯一的, 并且扩张所得的测度在$\sigma(C)$上也是$\sigma$有限的. 
 
+## 1.5 $\Re^n$中的Lebesgue-Stieltjes测度
+- 在本节中, 我们将
+  - 先在$\Re^n$中, 建立Lebesgue测度
+  - 然后在$\Re^n$中, 在Lebesgue测度的基础上, 建立更一般的Lebesgue-Stieltjes测度
+
+- 设$a=(a_1, ..., a_n), b=(b_1, ..., b_n) \in \Re^n$. 先做以下约定: 
+  -  记$a \leq b$, 如果$a_i \leq b_i, \forall i \in [n]$. ($a < b$类似)
+  -  令$C = \{ (a,b] | a \leq b, a,b \in \Re^n \}$
+  -  令$\mu\big( (a, b] \big) = \Pi_{i=1}^n (b_i-a_i)$
+
+- **引理**(1.5.1): $C$是$\Re^n$上的半环, $\mu$是$C$上的$\sigma$可加非负集函数. 
+- **定理**(1.5.2): 易证$\sigma(C) = B(\Re^n)$. 根据测度扩张定理, 可以将$\mu$唯一地扩张成为$B(\Re)$上的$\sigma$有限测度, 称之为**Lebesgue测度**
+- **定义**(1.5.3)
+  - 增函数
+  - 设$\mu$为$B(\Re^n)$上一$\sigma$有限测度, 则称$\mu$为**Lebesgue-Stieltjes测度**
+- **定理**(1.5.4): 
