@@ -145,6 +145,8 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
 <!--待证明-->
 - **Caratheodory测度扩张定理**: 设$C$为$\Omega$上的一半环, $\mu$为$C$上的一$\sigma$可加非负集函数, 则$\mu$可扩张成$\sigma(C)$上的一测度. 若进一步$\mu$在$C$上为$\sigma$有限,  且$\Omega \in C_\sigma$, 则这一扩张是唯一的, 并且扩张所得的测度在$\sigma(C)$上也是$\sigma$有限的. 
 
+![](figures/measure-extension-thm.png)
+
 ## 1.5 $\Re^n$中的Lebesgue-Stieltjes测度
 - 在本节中, 我们将
   - 先在$\Re^n$中, 建立Lebesgue测度
