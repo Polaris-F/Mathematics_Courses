@@ -49,9 +49,11 @@
 <!--未证明-->
 - **定理** 2.1.11 设$f: \Omega \rightarrow (E, \mathscr{E})$为一映射, $\sigma(f) = f^{-1}(\mathscr{E})$, 则数值函数$\phi: (\Omega, \sigma(f)) \rightarrow (\bar{\Re}, B(\bar{\Re}))$可测 $\iff$ 存在$(E, \mathscr{E})$上的可测函数$h$, 使得$\phi = h \circ f$
 
-![](figures/thm-2-1-11.png)
+<center>
+<img src="figures/thm-2-1-11.png" alt="drawing" width="300"/>
+</center>
 
-- 评论
+- 注记
   - 可测映射是对两个任意抽象可测空间, 而(数值/Borel)可测函数则必须是映射到数值可测空间$\big(\bar{\Re}, B(\bar{\Re}) \big)$上.
 
 ## 2.2 单调类定理(函数形式)
@@ -72,12 +74,25 @@
 - **定义** 2.3.1 设$\{f_n\}_{n\geq1}, f$均为$(\Omega, \mathscr{F}, \mu)$上的实值可测函数
   - 如果存在一零测集$N \in \mathscr{F}, \mu(F)=0$, 使得$\lim\limits_{n \rightarrow \infty} f_n(\omega) = f(\omega), \forall \omega \in N^c$, 则称$\{f_n\}_{n\geq1}$**几乎处处收敛于**$f$, 记作$f \xrightarrow{a.e.} f$或$\lim\limits_{n \rightarrow \infty} f_n = f ~~a.e.$
   - 若对$\forall \epsilon, \lim\limits_{n \rightarrow \infty} \mu\Big(\big[|f_n-f|>\epsilon \big]\Big)=0$, 则称$\{f_n\}_{n\geq1}$**依测度收敛到**$f$, 记作$f \xrightarrow{\mu} f$
-  - 如果对$\forall \epsilon > 0, \exists A \in \mathscr{F} ~s.t.~ \mu(A) < \epsilon$, 且$\lim\limits_{n \rightarrow \infty} \sup\limits_{\omega \in A^c} |f_n(\omega)-f(\omega)| =0$, 则称$f_n$**几乎一致收敛**到$f$, 记作$f \xrightarrow{a.u.n.} f$或$\lim\limits_{n \rightarrow \infty} f_n = f ~~a.u.n.$
+  - 如果对$\forall \epsilon > 0, \exists A \in \mathscr{F} ~s.t.~ \mu(A) < \epsilon$, 且$\lim\limits_{n \rightarrow \infty} \sup\limits_{\omega \in A^c} |f_n(\omega)-f(\omega)| =0$, 则称$f_n$**几乎一致收敛**到$f$, 记作$f_n \xrightarrow{a.un.} f$或$\lim\limits_{n \rightarrow \infty} f_n = f ~~a.un.$
 
+<!--(2)(3)待证明-->
+- **定理** 2.3.4 设$\{f_n\}$和$f$均为实值可测函数
+  - $f_n \xrightarrow{a.e.} f \iff \forall \epsilon > 0$, 有 $\mu\Big( \cap_{n=1}^\infty \cup_{i=n}^\infty \big[|f_i-f|\geq\epsilon\big] \Big) = 0$
+  - $f_n \xrightarrow{a.un.} f \iff \forall \epsilon > 0$, 有 $\lim\limits_{n\rightarrow\infty} \mu\Big(\cup_{i=n}^\infty \big[|f_i-f|\geq\epsilon\big] \Big) = 0$
+  - $f_n \xrightarrow{\mu} f \iff $ 对$\{f_n\}$的任意子列$\{f_{n'}\}$, 存在其子列$\{f_{n_k'}\}$, 使得$f_{n_k'} \xrightarrow{a.un.} f, (k \rightarrow \infty)$.
 
-- 评论
-  - 三种收敛形式都是定义在测度空间上 
+<!--(3)待证明-->
+- **定理** 2.3.5 
+  - $f_n \xrightarrow{a.un.} f  \Rightarrow f_n \xrightarrow{a.e.} f$; $f_n \xrightarrow{a.un.} f  \Rightarrow f_n \xrightarrow{\mu} f$
+  - 若$\mu$为有限测度, 则有$f_n \xrightarrow{a.un.} f  \iff f_n \xrightarrow{a.e.} f$
+  - 若$f_n \xrightarrow{\mu} f$, 则存在子列$\{f_{n_k}\}$, 使得$f_{n_k} \xrightarrow{a.e.} f$
+
+- 注记
+  - 三种收敛形式都是定义在测度空间上
+  - 定理2.3.4用集合语言将三种收敛重新描述了一遍
+  - 回忆数学分析中函数序列$\{f_n\}_{n\geq1}$的**点点收敛**和**一致收敛**的定义, 一致收敛是比点点收敛更强的收敛形式
+  - 定理2.3.5(2)中$\Leftarrow$部分称为**Egorov定理**
   - 由于概率测度空间为一有限测度空间, 所以几乎处处收敛于和几乎一致收敛等价.
-  - 回忆数学分析中函数序列$\{f_n\}_{n\geq1}$**一致收敛**的定义
 
 

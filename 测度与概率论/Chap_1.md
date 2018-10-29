@@ -39,11 +39,12 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   - **$\lambda$类**: $\Omega \in C$, 对差运算封闭, 对单调增序列极限封闭(由此推知, 对取余集运算也封闭, 故$\emptyset \in C$)
   - 易证: $\sigma$代数为$\lambda$类, $\lambda$类为单调类
 
-![](figures/set_class.png)
+<center>
+<img src="figures/set_class.png" alt="drawing" width="300"/>
+<img src="figures/1-1.png" alt="drawing" width="300"/>
+</center>
 
-![](figures/1-1.png)
-
-- 评论
+- 注记
   - 上这门课的目的, 是想对概率论有更深的认识. 第一节课下课问了下老师教学计划, 结果发现这门课可以改叫《测度论》了.
   - **集合**作为现代数学最基本的概念之一, 真是无处不在啊!
   - [这里](https://math.stackexchange.com/questions/476159/limits-of-sequences-of-sets)有一个关于集合极限很好的解释. 从直观上解释了我们为什么要引入集合的上下极限的概念?
@@ -56,7 +57,9 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   - 同理, 可以定义$m(c)$(包含$C$的最小单调类)和$\lambda(C)$(包含$C$的最小$\lambda$类)
   - 易证: 恒有$m(C) \subset \lambda(C) \subset \sigma(C)$
 
-![](figures/1-2.png)
+<center>
+<img src="figures/1-2.png" alt="drawing" width="300"/>
+</center>
 
 - 引理
   - 若$C$同时为代数和单调类, 则$C$为$\sigma$代数
@@ -115,7 +118,7 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   - 单调可减性: $A, B \in F, A \subset B, \mu(B) < \infty \Rightarrow \mu(B \backslash A) = \mu(B) - \mu(A)$
   - 从下连续, 从上连续
 
-- 评论
+- 注记
   - 非负集函数的定义非常重要, 在后面的章节会反复遇到, 需牢记且理解.
 
 ## 1.4 外测度与测度的扩张
@@ -145,7 +148,9 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
 <!--待证明-->
 - **Caratheodory测度扩张定理**: 设$C$为$\Omega$上的一半环, $\mu$为$C$上的一$\sigma$可加非负集函数, 则$\mu$可扩张成$\sigma(C)$上的一测度. 若进一步$\mu$在$C$上为$\sigma$有限,  且$\Omega \in C_\sigma$, 则这一扩张是唯一的, 并且扩张所得的测度在$\sigma(C)$上也是$\sigma$有限的. 
 
-![](figures/measure-extension-thm.png)
+<center>
+<img src="figures/measure-extension-thm.png" alt="drawing" width="300"/>
+</center>
 
 ## 1.5 $\Re^n$中的Lebesgue-Stieltjes测度
 - 在本节中, 我们将
