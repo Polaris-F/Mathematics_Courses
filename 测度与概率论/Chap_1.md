@@ -104,8 +104,8 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
 
 
 - 定义
-  - 我们称$(\Omega, F)$为**可测空间**如果$F$是$\Omega$上的$\sigma$代数
-  - 我们称$\mu: F \rightarrow \overline{\Re}_+ = [0, +\infty]$为$(\Omega, F)$上的**测度**, 如果(1)$\mu(\emptyset)=0$ (2)$\mu$满足**可列可加性**或**$\sigma$可加性**
+  - 我们称$(\Omega, \mathscr{F})$为**可测空间**如果$F$是$\Omega$上的$\sigma$代数
+  - 我们称$\mu: \mathscr{F} \rightarrow \overline{\Re}_+ = [0, +\infty]$为$(\Omega, F)$上的**测度**, 如果(1)$\mu(\emptyset)=0$ (2)$\mu$满足**可列可加性**或**$\sigma$可加性**
   - 设$\mu$为可测空间$(\Omega, F)$上的测度, 则称$(\Omega, F, \mu)$为**测度空间**
   - 若$\mu(\Omega)<\infty$, 则称$\mu$为**有限测度**; 若$\mu(\Omega)=1$, 则称$\mu$为**概率测度**; 若存在$A_n \in F, n \geq 1$, 使得$\cup_n A_n = \Omega$, 且$\mu(A_n) < \infty, \forall n$, 则称$\mu$为**$\sigma$有限测度**
   - 例子: $(\Re, B(\Re), \lambda)$, 其中$B(\Re)$为Borel $\sigma$代数, $\lambda$为*Lebsgue*测度, 
@@ -114,7 +114,7 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   - 如果任何$\mu$零测集的子集都属于$F$, 则称$F$关于$\mu$是完备的, 称是$(\Omega, F, \mu)$**完备测度空间**
 
 <!--待证明-->
-- 定理: 设$(\Omega, F, \mu)$为一测度空间, 则$\mu$满足
+- **定理**1.3.3 设$(\Omega, F, \mu)$为一测度空间, 则$\mu$满足
   - 单调可减性: $A, B \in F, A \subset B, \mu(B) < \infty \Rightarrow \mu(B \backslash A) = \mu(B) - \mu(A)$
   - 从下连续, 从上连续
 
