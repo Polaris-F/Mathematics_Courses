@@ -12,10 +12,10 @@
   - 令$(\Omega, \mathscr{F})$为一可测空间. $f: \Omega \rightarrow \bar{\Re}$, 若$f^{-1}(\bar{\Re}) \subset \mathscr{F}$, 则称f为**数值可测函数**, 或**Borel可测函数**, 简称**可测函数**. $f: \Omega \rightarrow \bar{\Re}$, 若$f^{-1}(\Re) \subset F$, 则称f为**实值可测函数**
 
 <!--IMPORTANT-->
-- **命题**: 设$(\Omega, \mathscr{F})$和$(E, \mathscr{E})$是两个可测空间, $C \subset \mathscr{E}$, 满足$\sigma(C) = \mathscr{E}$. 若$f^{-1}(C) \subset F$, 则f可测.
+- **命题** 2.1.3 设$(\Omega, \mathscr{F})$和$(E, \mathscr{E})$是两个可测空间, $C \subset \mathscr{E}$, 满足$\sigma(C) = \mathscr{E}$. 若$f^{-1}(C) \subset F$, 则f可测.
 
 <!--IMPORTANT-->
-- **定理**2.1.4 设$f$是$(\Omega, \mathscr{F})$上的一个数值函数, $[f < a] := \{ \omega \in \Omega | f(\omega) < a \}$, 则下列条件等价:
+- **定理** 2.1.4 设$f$是$(\Omega, \mathscr{F})$上的一个数值函数, $[f < a] := \{ \omega \in \Omega | f(\omega) < a \}$, 则下列条件等价:
  - $f$可测
  - $\forall a \in \Re, [f < a] \in \mathscr{F}$
  - $\forall a \in \Re, [f > a] \in \mathscr{F}$
@@ -23,7 +23,7 @@
  - $\forall a \in \Re, [f \geq a] \in \mathscr{F}$
 
 <!--IMPORTANT-->
-- **命题**2.1.5 $(\Omega, \mathscr{F})$上实值可测全体构成实数域上的向量空间, 即$\forall a \in \Re$, 若$f, g$可测, 则有
+- **命题** 2.1.5 $(\Omega, \mathscr{F})$上实值可测全体构成实数域上的向量空间, 即$\forall a \in \Re$, 若$f, g$可测, 则有
   - $a\cdot f$可测
   - $f+g$可测
 

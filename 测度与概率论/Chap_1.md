@@ -103,7 +103,7 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   -  显然: 从上连续 $\Rightarrow$ 在空集中连续
 
 
-- 定义
+- **定义** 1.3.2
   - 我们称$(\Omega, \mathscr{F})$为**可测空间**如果$F$是$\Omega$上的$\sigma$代数
   - 我们称$\mu: \mathscr{F} \rightarrow \overline{\Re}_+ = [0, +\infty]$为$(\Omega, F)$上的**测度**, 如果(1)$\mu(\emptyset)=0$ (2)$\mu$满足**可列可加性**或**$\sigma$可加性**
   - 设$\mu$为可测空间$(\Omega, F)$上的测度, 则称$(\Omega, F, \mu)$为**测度空间**
@@ -114,12 +114,15 @@ $\underline{\lim}\limits_{n\rightarrow\infty} A_n \subset \overline{\lim}\limits
   - 如果任何$\mu$零测集的子集都属于$F$, 则称$F$关于$\mu$是完备的, 称是$(\Omega, F, \mu)$**完备测度空间**
 
 <!--待证明-->
-- **定理**1.3.3 设$(\Omega, F, \mu)$为一测度空间, 则$\mu$满足
-  - 单调可减性: $A, B \in F, A \subset B, \mu(B) < \infty \Rightarrow \mu(B \backslash A) = \mu(B) - \mu(A)$
-  - 从下连续, 从上连续
+- **定理** 1.3.3 设$(\Omega, F, \mu)$为一测度空间, 则$\mu$满足
+  - 单调性
+  - 可减性: $A, B \in F, A \subset B, \mu(B) < \infty \Rightarrow \mu(B \backslash A) = \mu(B) - \mu(A)$
+  - 从下连续
+  - 从上连续
 
 - 注记
   - 非负集函数的定义非常重要, 在后面的章节会反复遇到, 需牢记且理解.
+  - 测度的性质: $\sigma(\emptyset)=0$, $\sigma$可加, 单调可减, 从上/下连续
 
 ## 1.4 外测度与测度的扩张
 - 在本节中我们会

@@ -1,9 +1,9 @@
 ## 1.5 $\Re^n$中的Lebesgue-Stieltjes测度
-- 1.5.1 $C = \{ (a,b] | a \leq b, a,b \in \Re^n \}$, 证明:
-  - $C$是半环
 
-<!--  
-  - $\sigma(C) = B(\Re)$ (hint: 设$\mathscr{G}=\Re$上的开集全体, 有$\sigma(\mathscr{G})=B(\Re)$)
+<!--
+- 1.5.1 $\mathscr{C} = \{ (a,b] | a \leq b, a,b \in \Re^n \}$, 证明:
+  - $\mathscr{C}$是半环
+  - $\sigma(\mathscr{C}) = B(\Re)$ (hint: 设$\mathscr{G}=\Re$上的开集全体, 有$\sigma(\mathscr{G})=B(\Re)$)
 -->
 
 <!--
