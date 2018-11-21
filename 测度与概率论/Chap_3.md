@@ -55,12 +55,10 @@
   - 若$f_n \leq f_{n+1} ~a.e.~  \forall n \geq 1$, 且$f_n \xrightarrow{a.e.} f$, 则$\lim\limits_{n\rightarrow\infty}\mu(f_n) = \mu(f)$
   - 若$f_n \geq f_{n+1} ~a.e.~  \forall n \geq 1$, 且$f_n \xrightarrow{a.e.} f$, 且$\mu(f_1)<\infty$, 则$\lim\limits_{n\rightarrow\infty}\mu(f_n) = \mu(f)$
 
-<!--待证明-->
 - **定理** 3.2.3 (**单调收敛定理**) 设$f_n \in \bar{L}$, 且$\mu(f_n)$存在
   - $f_n \uparrow f ~a.e.~$, 且$\mu(f_1) > -\infty$, 则$\mu(f)$存在, 且$\mu(f_n) \uparrow \mu(f)$ 
   - $f_n \downarrow f ~a.e.~$, 且$\mu(f_1) < +\infty$, 则$\mu(f)$存在, 且$\mu(f_n) \downarrow \mu(f)$ 
 
-<!--待证明-->
 - **引理** 3.2.4 (**Fatou引理**) 设$f_n \in \bar{L}$, 且$\mu(f_n)$存在
   -  若$\exists g \in \bar{L}, \mu(g) > -\infty$, 使得$f_n \geq g ~a.e.~\forall n\geq1$, 则$\lim\limits_{n\rightarrow\infty}\inf\limits_{k \geq n}f_k$存在, 且$\mu\big(\lim\limits_{n\rightarrow\infty}\inf\limits_{k \geq n}f_k\big) \leq \lim\limits_{n\rightarrow\infty}\inf\limits_{k \geq n}\mu(f_k)$
   -  若$\exists g \in \bar{L}, \mu(g) < +\infty$, 使得$f_n \leq g ~a.e.~\forall n\geq1$, 则$\lim\limits_{n\rightarrow\infty}\sup\limits_{k \geq n}f_k$存在, 且$\mu\big(\lim\limits_{n\rightarrow\infty}\sup\limits_{k \geq n}f_k\big) \geq \lim\limits_{n\rightarrow\infty}\sup\limits_{k \geq n}\mu(f_k)$
@@ -72,9 +70,26 @@
 
 - **定理** 3.2.9
 
+- 注记
+  - 单调收敛定理, Fatou引理, 控制收敛定理都是在讲什么情况下可以交换求极限和求测度的顺序
 
 ## 3.3 不定积分与测度符号
+- 在本节中, 我们将
+  - 定义符号测度
+
+- **引理** 3.3.1 
+- **定义** 3.3.2 
+- **注** 3.3.3
+- **定理** 3.3.4 (**Jordan-Hahn 分解定理**)
+- **注** 3.3.5
+- **命题** 3.3.6
+- **定义** 3.3.7
+- **定理** 3.3.10 (**Lebesgue的 分解**)
+- **定理** 3.3.11 (**Radon-Nikodym 定理**)
+- **定理** 3.3.15 (**Vitali-Hahn-Saks 定理**)
 
 
 ## 3.4 空间$L^p$及其对偶
+
+
 ## 3.5 空间$L^\infty(\Omega, \mathscr{F})$和$L^\infty(\Omega, \mathscr{F}, m)$的对偶
